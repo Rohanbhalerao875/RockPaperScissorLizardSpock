@@ -1,0 +1,87 @@
+# rock paper scissor lizard spock :
+import time
+import random
+print(' Welcome to the game Rock , Paper , scissor , Lizard , Spock : \n\n')
+a = int(input(' If you are fimiliar with the rules press 1 \nIf you want to know the rules press 2\n '))
+if a==1:
+    print('Very Well then ')
+elif a==2:
+    print('Its very simple')
+    time.sleep(2.5)
+    print('Scissors cuts Paper')
+    time.sleep(1.5)
+    print('Paper covers Rock')
+    time.sleep(1.5)
+    print('Rock crushes Lizard')
+    time.sleep(1.5)
+    print('Lizard poisons Spock')
+    time.sleep(1.5)
+    print('Spock smashes Scissors')
+    time.sleep(1.5)
+    print('Scissors decapitates Lizard')
+    time.sleep(1.5)
+    print('Lizard eats Paper')
+    time.sleep(1.5)
+    print('Paper disproves Spock')
+    time.sleep(1.5)
+    print('Spock vaporizes Rock')
+    time.sleep(1.5)
+    print('and as it always has')
+    time.sleep(2)
+    print('Rock crushes Scissors')
+    time.sleep(4)
+
+def game_name(User_choice):
+    if User_choice=="R":
+        return ('ROCK')
+    elif User_choice=="P":
+        return ('PAPER')
+    elif User_choice=="S":
+        return ('SCISSOR')
+    elif User_choice=="L":
+        return ('LIZARD')
+    elif User_choice=="S":
+        return ('SPOCK')
+def game_comp(comp_choice):
+    if comp_choice=="R":
+        return ('ROCK')
+    elif comp_choice=="P":
+        return ('PAPER')
+    elif comp_choice=="S":
+        return ('SCISSOR')
+    elif comp_choice=="L":
+        return ('LIZARD')
+    elif comp_choice=="S":
+        return ('SPOCK')
+
+    
+
+
+def game__win(X,Y):
+        if  ((X == 'ROCK') and  (Y == ('SCISSOR') or ('LIZARD'))) :
+            return(f'You choose Rock and Computer choose {Y} Hence you win ')
+        elif ((X == 'PAPER') and (Y == ('ROCK') or ('SCISSOR'))) :
+            return(f'You choose Paper and Computer choose {Y} Hence you win ')
+        elif ((X == 'SCISSOR') and (Y == ('PAPER') or ('LIZARD'))) :
+            return(f'You choose Scissor and Computer choose {Y} Hence you win ')
+        elif ((X == 'LIZARD') and (Y == ('PAPER') or ('SCISSOR'))) :
+            return(f'You choose Lizard and Computer choose {Y} Hence you win ')
+        elif ((X == 'SPOCK') and (Y == ('ROCK') or ('SCISSOR'))) :
+            return(f'You choose Spock and Computer choose {Y} Hence you win ')
+        elif X == Y :
+            return('The game is a draw :::')
+        else : 
+            return(f"you choose {X} and computer choose {Y} hence computer Wins :::")
+
+choices =['R','P','S','L','S']
+user_choice = input('Choose your weapon [R]ock [p]aper [S]cissor [L]izard [S]pock')
+comp_choice = random.choice(choices)
+
+X = game_name(user_choice)
+Y=  game_comp(comp_choice)
+new_var = game__win(X,Y)
+
+
+print(user_choice)
+print(comp_choice)
+print(new_var)
